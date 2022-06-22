@@ -1,0 +1,254 @@
+{
+  "tests": [
+    {
+      "name": "Test 01",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 01",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 02",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 02",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 03",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 03",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 04",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 04",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 05",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 05",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 06",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 06",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 07",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 07",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 08",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 08",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 09",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 09",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 10",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 10",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 11",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 11",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 12",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 grader.py 12",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 13",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "pylint",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 14",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "pytest",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 15",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/data/clean_data.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 16",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/data/compute_daily_prices.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 17",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/data/compute_monthly_prices.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 18",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/data/create_data_lake.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 19",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/data/ingest_data.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 20",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/data/pipeline.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 21",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/data/transform_data.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 22",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/features/make_features.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 23",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/models/make_forecasts.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 24",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/models/train_daily_data.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Test 25",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "run": "python3 src/visualization/make_daily_prices_plot.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
