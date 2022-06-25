@@ -1,9 +1,10 @@
 """
 Módulo de ingestión de datos.
 -------------------------------------------------------------------------------
-
 """
 
+import os 
+import urllib.request
 
 def ingest_data():
     """Ingeste los datos externos a la capa landing del data lake.
@@ -13,10 +14,24 @@ def ingest_data():
     descarga debe realizarse usando únicamente funciones de Python.
 
     """
-    raise NotImplementedError("Implementar esta función")
+
+    parent_dir = "data_lake"
+    os.chdir("../../")
+
+    if os.path.isdir(parent_dir) and os.path.isdir(parent_dir+"/landing" ):
+        os.chdir(parent_dir + "/landing")
+        for year in range(1995,2022):
+            if year != 2016 and year !=  2017:
+                url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'+ str(year)+'.xlsx?raw=true'   
+                urllib.request.urlretrieve(url, str(year) + ".xlsx")
+            else :
+                url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/'+ str(year)+'.xls?raw=true'   
+                urllib.request.urlretrieve(url, str(year) + ".xls")
+    else:
+       print("There is not landing directory!")
 
 
 if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+	import doctest
+	ingest_data()
+	doctest.testmod()
