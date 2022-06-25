@@ -19,7 +19,6 @@ def create_data_lake():
     ```
     """
     parent_dir = "data_lake"
-    os.chdir("../../")
     cwd = os.getcwd()
     path_data_lake = os.path.join(cwd, parent_dir)
 

@@ -16,7 +16,6 @@ def ingest_data():
     """
 
     parent_dir = "data_lake"
-    os.chdir("../../")
 
     if os.path.isdir(parent_dir) and os.path.isdir(parent_dir+"/landing" ):
         os.chdir(parent_dir + "/landing")
