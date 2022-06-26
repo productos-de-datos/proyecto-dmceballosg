@@ -1,3 +1,4 @@
+import pandas as pd
 def transform_data():
     """Transforme los archivos xls a csv.
 
@@ -7,10 +8,13 @@ def transform_data():
     H23.
 
     """
-    raise NotImplementedError("Implementar esta función")
+    read_file = pd.read_excel("./data_lake/landing/1995.xlsx", )   
+
+    
+    print(read_file.head(5))
 
 
 if __name__ == "__main__":
     import doctest
-
+    transform_data()
     doctest.testmod()
