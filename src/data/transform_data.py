@@ -1,4 +1,7 @@
 import pandas as pd
+import sys
+import subprocess
+
 def transform_data():
     """Transforme los archivos xls a csv.
 
@@ -8,9 +11,10 @@ def transform_data():
     H23.
 
     """
-    read_file = pd.read_excel("./data_lake/landing/1995.xlsx", engine='openpyxl')   
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install',
+    'openpyxl'])
 
-    
+    read_file = pd.read_excel("./data_lake/landing/1995.xlsx", engine='openpyxl')   
     print(read_file.head(5))
 
 
