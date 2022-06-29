@@ -13,14 +13,20 @@ def compute_monthly_prices():
 
 
     """
-    df_completed = pd.read_csv("./data_lake/cleansed/precios-horarios.csv")
+    routeTry = True
+    try:
+        df_completed = pd.read_csv("./data_lake/cleansed/precios-horarios.csv")
+    except:
+        routeTry = False
+        df_completed = pd.read_csv("../../data_lake/cleansed/precios-horarios.csv")
     df_completed["year-month"] = df_completed["fecha"].map(lambda x: str(x)[0:7])
 
     df_completed = df_completed.groupby('year-month', as_index=False).mean()
     df_completed = df_completed[['year-month','precio']]
     df_completed = df_completed.rename(columns= {'year-month': 'fecha'})
     df_completed["fecha"] =  df_completed["fecha"].map(lambda x: x + str("-01"))
-    df_completed.to_csv("./data_lake/business/precios-mensuales.csv", index=False)
+    route = "./data_lake/business/precios-mensuales.csv" if routeTry else "../../data_lake/business/precios-mensuales.csv"
+    df_completed.to_csv(route, index=False)
 
 if __name__ == "__main__":
     import doctest

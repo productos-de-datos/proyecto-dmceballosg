@@ -26,14 +26,21 @@ def transform_data():
 
     for year in range(1995, 2022):
         extention = '.xlsx' if year != 2016 and year != 2017 else '.xls'
-        read_file = pd.read_excel(
-            "./data_lake/landing/" + str(year) + extention, skiprows=number_skips[year])
+        routeTry = True
+        try:
+            read_file = pd.read_excel(
+                "./data_lake/landing/" + str(year) + extention, skiprows=number_skips[year])
+        except:
+            routeTry = False
+            read_file = pd.read_excel(
+                "../../data_lake/landing/" + str(year) + extention, skiprows=number_skips[year])
         read_file = read_file.loc[:, read_file.columns.notna()]
         if 'Version' in read_file.columns:
             read_file = read_file.drop(columns=['Version'])
         if 'Unnamed: 26' in read_file.columns:
             read_file = read_file.drop(columns=['Unnamed: 26'])
-        read_file.to_csv("./data_lake/raw/" + str(year) + ".csv", index=False)
+        route = "./data_lake/raw/" if routeTry else "../../data_lake/raw/"
+        read_file.to_csv( route + str(year) + ".csv", index=False)
 
 if __name__ == "__main__":
     import doctest

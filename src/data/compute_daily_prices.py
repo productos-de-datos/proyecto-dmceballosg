@@ -11,10 +11,16 @@ def compute_daily_prices():
     * precio: precio promedio diario de la electricidad en la bolsa nacional
 
     """
-    df_completed = pd.read_csv("./data_lake/cleansed/precios-horarios.csv")
+    routeTry = True
+    try:
+        df_completed = pd.read_csv("./data_lake/cleansed/precios-horarios.csv")
+    except:
+        routeTry = False
+        df_completed = pd.read_csv("../../data_lake/cleansed/precios-horarios.csv")
     df_completed = df_completed.groupby('fecha', as_index=False).mean()
     df_completed = df_completed[['fecha','precio']]
-    df_completed.to_csv("./data_lake/business/precios-diarios.csv", index=False)
+    route = "./data_lake/business/precios-diarios.csv" if routeTry else "../../data_lake/business/precios-diarios.csv"
+    df_completed.to_csv(route, index=False)
 
 if __name__ == "__main__":
     import doctest
