@@ -1,3 +1,4 @@
+from numpy import NaN
 import pandas as pd
 import sys
 import subprocess
@@ -27,8 +28,12 @@ def transform_data():
         extention = '.xlsx' if year != 2016 and year != 2017 else '.xls'
         read_file = pd.read_excel(
             "./data_lake/landing/" + str(year) + extention, skiprows=number_skips[year])
+        read_file = read_file.loc[:, read_file.columns.notna()]
+        if 'Version' in read_file.columns:
+            read_file = read_file.drop(columns=['Version'])
+        if 'Unnamed: 26' in read_file.columns:
+            read_file = read_file.drop(columns=['Unnamed: 26'])
         read_file.to_csv("./data_lake/raw/" + str(year) + ".csv", index=False)
-
 
 if __name__ == "__main__":
     import doctest
