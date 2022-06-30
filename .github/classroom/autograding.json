@@ -92,7 +92,7 @@
     },
     {
       "name": "Test 10",
-      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
+      "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint holidays-co",
       "run": "python3 grader.py 10",
       "input": "",
       "output": "",

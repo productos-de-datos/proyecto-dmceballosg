@@ -1,3 +1,6 @@
+import pandas as pd
+from holidays_co import is_holiday_date
+
 def make_features():
     """Prepara datos para pronóstico.
 
@@ -12,10 +15,18 @@ def make_features():
     analizar y determinar las variables explicativas del modelo.
 
     """
-    raise NotImplementedError("Implementar esta función")
+    df = pd.read_csv("./data_lake/business/precios-diarios.csv")
+    df["fecha"] = pd.to_datetime(df["fecha"])
+    df["ano"] = df["fecha"].dt.year
+    df["mes"] = df["fecha"].dt.month
+    df["tipo_dia"] = df["fecha"].dt.dayofweek 
+    df["festivo"] = df["fecha"].map(lambda x: is_holiday_date(x))
+    df["fin_semana"] = df["fecha"].map(lambda x:  bool(len(pd.bdate_range(x,x))))
+
+    df.to_csv("./data_lake/business/features/precios_diarios.csv", index=False)
 
 
 if __name__ == "__main__":
     import doctest
-
+    make_features()
     doctest.testmod()
