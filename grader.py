@@ -134,7 +134,7 @@ def test_10():
 
 def test_11():
     """Modelo creado"""
-    assert os.path.isfile("modeles/precios-diarios.pkl") is True
+    assert os.path.isfile("models/precios-diarios.pkl") is True
 
 
 def test_12():
