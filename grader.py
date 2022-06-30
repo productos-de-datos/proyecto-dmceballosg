@@ -114,6 +114,7 @@ def test_07():
 
 def test_08():
     """Evalua figura precios diarios"""
+    os.system("make make_daily_prices_plot")
     assert os.path.isfile("data_lake/business/reports/figures/daily_prices.png") is True
 
 
