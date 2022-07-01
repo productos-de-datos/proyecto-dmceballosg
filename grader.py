@@ -139,8 +139,8 @@ def test_11():
 
 def test_12():
     """Pronosticos"""
+    os.system("make make_forecasts")
     assert os.path.isfile("data_lake/business/forecasts/precios-diarios.csv") is True
-
 
 test = {
     "01": test_01,

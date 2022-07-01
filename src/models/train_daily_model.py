@@ -1,8 +1,8 @@
-import os
 from sklearn.neural_network import MLPRegressor
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 import joblib
+import os
 
 import pandas as pd
 def train_daily_model():
@@ -30,30 +30,36 @@ def train_daily_model():
 
 
     # # GridSearchCV
-
-
+    X_test["y"] = y_true_test 
+    X_test.to_csv('data_lake/business/forecasts/dataToForecast.csv')
+    
     model = MLPRegressor(max_iter= 100,
-        activation='identity',
-        solver= 'adam',
-        learning_rate_init= 0.001)
+        activation='identity', 
+        solver= 'adam', 
+        learning_rate_init= 0.001) 
 
-    model = MLPRegressor()
+    model = MLPRegressor() 
+   
     param_grid = [
           {
-              "hidden_layer_sizes": [(1,),(2,),(3,),(4,),(5,)],
+              "hidden_layer_sizes": [(1,),(2,),(3,),(4,),(5,)], 
               "random_state": [1000, 1001, 1002, 1003, 1004, 1005]
               
           }
     ]
 
-    grid_search = GridSearchCV(estimator = model, param_grid=param_grid, cv=5)
-    data_train = grid_search.fit(X_train, y_true_train)
+    grid_search = GridSearchCV(estimator = model, 
+                          param_grid=param_grid, cv=5) 
+
+    dataTrain = grid_search.fit(X_train, y_true_train)
+
     parent_dir = "src/models"
     cwd = os.getcwd()
     path_parent_dir = os.path.join(cwd, parent_dir)
 
-    joblib.dump(data_train, path_parent_dir + '/precios-diarios.pkl')
+    joblib.dump(dataTrain, path_parent_dir + '/precios-diarios.pkl')
 
+   
 
 if __name__ == "__main__":
     import doctest
