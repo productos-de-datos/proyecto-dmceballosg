@@ -19,9 +19,10 @@ def make_features():
     df["fecha"] = pd.to_datetime(df["fecha"])
     df["ano"] = df["fecha"].dt.year
     df["mes"] = df["fecha"].dt.month
+    df["dia"] = df["fecha"].dt.day
     df["tipo_dia"] = df["fecha"].dt.dayofweek 
-    df["festivo"] = df["fecha"].map(lambda x: is_holiday_date(x))
-    df["fin_semana"] = df["fecha"].map(lambda x:  bool(len(pd.bdate_range(x,x))))
+    df["festivo"] = df["fecha"].map(lambda x: 1 if is_holiday_date(x) else 0)
+    df["fin_semana"] = df["fecha"].map(lambda x:  len(pd.bdate_range(x,x)))
 
     df.to_csv("./data_lake/business/features/precios_diarios.csv", index=False)
 

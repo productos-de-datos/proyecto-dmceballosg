@@ -17,7 +17,7 @@ def make_forecasts():
 
     """
     
-    df_feature_train = pd.read_csv('./data_lake/business/forecasts/dataToForecast.csv')
+    df_feature_train = pd.read_csv('./src/models/dataToForecast.csv')
     df_prices = df_feature_train.copy()
     df_feature_train  = df_feature_train.drop(columns = ['Unnamed: 0', 'y'])
 

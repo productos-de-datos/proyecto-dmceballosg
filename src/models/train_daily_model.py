@@ -31,8 +31,7 @@ def train_daily_model():
 
     # # GridSearchCV
     X_test["y"] = y_true_test 
-    X_test.to_csv('data_lake/business/forecasts/dataToForecast.csv')
-    
+    X_test.to_csv('src/models/dataToForecast.csv')
     model = MLPRegressor(max_iter= 100,
         activation='identity', 
         solver= 'adam', 
