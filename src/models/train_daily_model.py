@@ -11,7 +11,6 @@ def train_daily_model():
     Con las features entrene el modelo de proóstico de precios diarios y
     salvelo en models/precios-diarios.pkl
 
-
     """
     df = pd.read_csv("./data_lake/business/features/precios_diarios.csv")
 
