@@ -123,7 +123,7 @@
     {
       "name": "Test 13",
       "setup": "pip3 install matplotlib sklearn pandas luigi pytest pylint",
-      "run": "pylint",
+      "run": "pylint src/data/*.py",
       "input": "",
       "output": "",
       "comparison": "included",
