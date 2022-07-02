@@ -1,3 +1,7 @@
+"""
+Este modulo crea la estructura necesaria para el proyecto.
+Debe ser ejecutado ya sea desde el directorio actual o desde la raiz del proyecto
+"""
 import os
 def create_data_lake():
     """Cree el data lake con sus capas.
@@ -6,11 +10,11 @@ def create_data_lake():
     ```
     .
     |
-    \___ data_lake/
+    |___ data_lake/
          |___ landing/
          |___ raw/
          |___ cleansed/
-         \___ business/
+         |___ business/
               |___ reports/
               |    |___ figures/
               |___ features/
@@ -40,4 +44,3 @@ if __name__ == "__main__":
     import doctest
     create_data_lake()
     doctest.testmod()
-    
